@@ -58,7 +58,7 @@
             $dog3->latir();
 
             $dog3->set_Nome("");
-            $dog3->latir();
+            $dog3->latir();https://github.com/araujogustavo602/contta.git
             
             echo "<ul><li>" . $dog3->get_Raca() . "</li></ul>";
         }

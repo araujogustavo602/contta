@@ -1,6 +1,6 @@
 <?php
 
-    class Conta
+    class agencias
     {
         //definindo os atributos da classe
         private $numero;
@@ -47,18 +47,42 @@
 
         //funções específicas da classe
 
-        public function latir()
+        public function saldo()
         {
             echo "$this->nome conta<br>";
         }
 
-        public function rosnar($_pessoa)
+        public function _proprietário($_pessoa)
         {
-            echo $this->dono == $_pessoa ? 
+            echo $this->saldo == $_pessoa ? 
                                 "$this->nome abanou o rabo. <br>" : 
                                 "$this->nome rosnou para você. <br>";
         }
 
     }
 
-?>
+    class Conta
+    {
+        public string $cpfTitular; 
+        public string $nomeTitular; 
+        public float $saldo;
+    
+        public function sacar(float $valorASacar)
+        { //metodo (sacar);
+            if ($valorASacar > $this->saldo) {
+                echo "Saldo indisponivel!";
+            } else {
+                $this->saldo -= $valorASacar;
+            }
+        }
+    
+        public function depositar(float $valorDepositado): void 
+        {
+            if ($valorDepositado > 0) {
+                $valorDepositado += $this->saldo;
+                echo "Deposito realizado com sucesso!";
+            } elseif ($valorDepositado < 0) {
+                echo 'Você precisa adicionar um valor positivo!';
+            }
+        }
+    }
